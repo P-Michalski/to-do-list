@@ -1,0 +1,15 @@
+.form__inputBox {
+    padding: 8px;
+    border: 2px solid #dcdcdc;
+}
+
+.form__button {
+    background-color: teal;
+    color: #ccffff;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form__button:focus {
+    outline: 2px solid black;
+}

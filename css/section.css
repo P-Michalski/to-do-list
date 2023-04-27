@@ -1,6 +1,62 @@
+.formSection {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 1px;
+}
+
+.formSection__item {
+    background-color: white;
+    padding: 20px;
+    margin: 0px;
+    box-shadow: 0 0 3px 1px #e5e5e5;
+}
+
+.formSection__item--first {
+    font-size: 20px;
+}
+
+.formSection__item--last {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .formSection__item--last {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+.taskSection {
+    margin-top: 10px;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 1px;
+}
+
+.taskSection__item {
+    background-color: white;
+    padding: 20px;
+    margin: 0px;
+    box-shadow: 0 0 3px 1px #e5e5e5;
+}
+
+.taskSection__item--first {
+    font-size: 20px;
+}
+
 .taskSection__taskList {
     list-style: none;
     padding-left: 10px;
+}
+
+.taskSection__listItem {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 1px solid #dcdcdc;
 }
 
 .taskSection__listItemText--done {
@@ -10,9 +66,21 @@
 .taskSection__button {
     min-width: 28px;
     min-height: 28px;
+    border: none;
 }
 
-.taskSection__listItem {
-    display: flex;
+.taskSection__button:focus {
+    outline: 2px solid black;
+}
 
+.taskSection__button--first {
+    margin-right: 10px;
+    background-color: #1a7b1e;
+    color: #f7fff7;
+}
+
+.taskSection__button--last {
+    margin-left: 10px;
+    background-color: #ec293b;
+    color: white;
 }
