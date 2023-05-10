@@ -15,6 +15,10 @@
     border-bottom: 1px solid #dcdcdc;
 }
 
+.tasks__listItem--hidden {
+    display: none;
+}
+
 .tasks__listItemText--done {
     text-decoration: line-through;
 }
@@ -31,12 +35,22 @@
 
 .tasks__button--first {
     margin-right: 10px;
-    background-color: #1a7b1e;
+    background-color: hsl(122, 65%, 29%);
     color: #f7fff7;
+    transition: 0.5s ease;
+}
+
+.tasks__button--first:hover {
+    background-color: hsl(122, 65%, 37%);
 }
 
 .tasks__button--last {
     margin-left: 10px;
-    background-color: #ec293b;
+    background-color: hsl(354, 84%, 54%);
     color: white;
+    transition: 0.5s ease;
+}
+
+.tasks__button--last:hover {
+    background-color: hsl(354, 84%, 62%);
 }

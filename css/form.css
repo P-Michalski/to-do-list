@@ -21,10 +21,16 @@
 }
 
 .form__button {
-    background-color: teal;
+    background-color: hsl(180, 100%, 25%);
     color: #ccffff;
     border: none;
     font-family: 'Montserrat', sans-serif;
+    transition: 0.5s ease;
+}
+
+.form__button:hover {
+    transform: scale(1.1);
+    background-color: hsl(180, 100%, 30%);
 }
 
 .form__button:focus {
