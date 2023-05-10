@@ -40,7 +40,7 @@
             <button class="buttons__button js-toggleHideDoneTasksButton">
                 ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
             </button>
-            <button class="buttons__button js-toggleAllTasksDoneButton"
+            <button class="buttons__button js-markAllTasksDoneButton"
                 ${tasks.every(({ done }) => done) ? "disabled" : ""}>
                 Ukończ wszystkie
             </button>
@@ -53,9 +53,9 @@
             toggleHideDoneTasksButton.addEventListener("click", toggleHideDoneTasks);
         }
 
-        const toggleAllTasksDoneButton = document.querySelector(".js-toggleAllTasksDoneButton");
-        if (toggleAllTasksDoneButton) {
-            toggleAllTasksDoneButton.addEventListener("click", toggleAllTasksDone);
+        const markAllTasksDoneButton = document.querySelector(".js-markAllTasksDoneButton");
+        if (markAllTasksDoneButton) {
+            markAllTasksDoneButton.addEventListener("click", markAllTasksDone);
         }
 
     };
@@ -99,7 +99,7 @@
         render();
     };
 
-    const toggleAllTasksDone = () => {
+    const markAllTasksDone = () => {
         tasks = tasks.map((task) => ({
             ...task,
             done: true,
