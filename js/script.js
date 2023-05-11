@@ -7,21 +7,13 @@
         for (const task of tasks) {
             htmlString += `
                 <li class="tasks__listItem ${task.done && hideDoneTasks ? "tasks__listItem--hidden" : ""}">
-                    <button 
-                    class="tasks__button 
-                    tasks__button--first 
-                    js-doneButton">
-                    ${task.done ? "✔" : ""}
+                    <button class="tasks__button tasks__button--first js-doneButton">
+                        ${task.done ? "✔" : ""}
                     </button>
-                    <span
-                    ${task.done ? 
-                    " class=\"tasks__listItemText--done\"" : ""}>
-                    ${task.content}
+                    <span${task.done ? " class=\"tasks__listItemText--done\"" : ""}>
+                        ${task.content}
                     </span>
-                    <button 
-                    class="tasks__button 
-                    tasks__button--last 
-                    js-removeButton">🗑</button>
+                    <button class="tasks__button tasks__button--last js-removeButton">🗑</button>
                 </li>
             `;
         };
@@ -31,6 +23,7 @@
 
     const renderButtons = () => {
         const buttonsElement = document.querySelector(".js-buttons");
+
         if (!tasks.length) {
             buttonsElement.innerHTML = "";
             return;
@@ -132,15 +125,16 @@
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        const newTask = document.querySelector(".js-newTask");
+
+        const newTaskInput = document.querySelector(".js-newTask");
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
-        if (newTaskContent === "") {
-            newTask.focus();
-            return;
+
+        if (newTaskContent !== "") {
+            addNewTask(newTaskContent);
         }
-        addNewTask(newTaskContent);
-        newTask.value = "";
-        newTask.focus();
+        
+        newTaskInput.value = "";
+        newTaskInput.focus();
     };
 
     const init = () => {

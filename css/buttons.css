@@ -20,6 +20,7 @@
 
 .buttons__button:hover {
     color: hsl(180, 100%, 35%);
+    cursor: pointer;
 }
 
 .buttons__button:disabled {
